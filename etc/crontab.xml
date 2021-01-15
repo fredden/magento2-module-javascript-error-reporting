@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Cron:etc/crontab.xsd">
+    <group id="default">
+        <job name="fredden_javascript_error_reporting_prune"
+                instance="Fredden\JavaScriptErrorReporting\Cron\PruneOldJobs"
+                method="execute">
+            <schedule>47 23 * * *</schedule>
+        </job>
+    </group>
+</config>

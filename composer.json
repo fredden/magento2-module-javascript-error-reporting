@@ -1,0 +1,27 @@
+{
+    "name": "fredden/magento2-module-javascript-error-reporting",
+    "type": "magento2-module",
+    "description": "A Magento 2 module which captures JavaScript errors for later review by website administrators",
+    "homepage": "https://github.com/fredden/magento2-module-javascript-error-reporting",
+    "license": "CC-BY-SA-4.0",
+    "authors": [
+        {
+            "name": "Dan Wallis",
+            "email": "dan@wallis.nz"
+        }
+    ],
+    "require": {
+        "php": "^7.1 || ^8.0",
+        "magento/framework": "^102.0 || ^103.0",
+        "magento/module-backend": "^101.0 || ^102.0",
+        "magento/module-ui": "^101.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fredden\\JavaScriptErrorReporting\\": ""
+        },
+        "files": [
+            "registration.php"
+        ]
+    }
+}

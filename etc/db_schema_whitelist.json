@@ -1,0 +1,21 @@
+{
+    "fredden_javascript_error_report": {
+        "column": {
+            "event_id": true,
+            "created_at": true,
+            "user_agent": true,
+            "referrer": true,
+            "url": true,
+            "browser_width": true,
+            "browser_height": true,
+            "error_message": true,
+            "stack_trace": true,
+            "error_file": true,
+            "line": true,
+            "column": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
