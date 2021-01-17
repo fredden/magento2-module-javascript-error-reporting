@@ -7,6 +7,7 @@ xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
                 <resource id="Magento_Reports::report">
                     <resource id="Fredden_JavaScriptErrorReporting::group" title="JavaScript Error Reporting" sortOrder="10" >
                         <resource id="Fredden_JavaScriptErrorReporting::view" title="View" sortOrder="150" />
+                        <resource id="Fredden_JavaScriptErrorReporting::delete" title="Delete" sortOrder="200" />
                     </resource>
                 </resource>
             </resource>

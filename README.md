@@ -50,5 +50,4 @@ Please note that issues relating to the problems that this module highlights in 
 - Ability to change how long errors are kept for (including option for 'forever')
 - View details of an individual event
 - Summary reports (grouped by message or file or user agent with frequency information)
-- Ability to delete events via admin (mass-action on grid, from details page, from reports)
 - Record errors encountered in adminhtml area

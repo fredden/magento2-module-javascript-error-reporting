@@ -31,10 +31,30 @@
 
     <listingToolbar name="listing_top">
         <filters name="listing_filters" />
+        <massaction name="listing_massaction">
+            <action name="delete">
+                <settings>
+                    <confirm>
+                        <message translate="true">Are you sure you want to delete selected items?</message>
+                        <title translate="true">Delete items</title>
+                    </confirm>
+                    <url path="fredden/JavaScriptErrorReporting/massDelete" />
+                    <type>delete</type>
+                    <label translate="true">Delete</label>
+                </settings>
+            </action>
+        </massaction>
         <paging name="listing_paging" />
     </listingToolbar>
 
     <columns name="fredden_javascripterrorreporting_grid_columns">
+        <selectionsColumn name="ids">
+            <settings>
+                <indexField>event_id</indexField>
+                <resizeEnabled>false</resizeEnabled>
+            </settings>
+        </selectionsColumn>
+
         <column name="event_id">
             <settings>
                 <filter>textRange</filter>
