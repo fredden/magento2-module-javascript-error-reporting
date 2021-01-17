@@ -14,6 +14,7 @@
         "php": "^7.1 || ^8.0",
         "magento/framework": "^102.0 || ^103.0",
         "magento/module-backend": "^101.0 || ^102.0",
+        "magento/module-reports": "^100.0",
         "magento/module-ui": "^101.0"
     },
     "autoload": {
