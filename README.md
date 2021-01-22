@@ -20,6 +20,8 @@ JavaScript errors are kept for up to 90 days and available via Magento's adminis
 * Errors are kept for up to 90 days and automatically deleted after this period
 * Errors are available for review in Magento's back-end
   - Admin -> Reports -> JavaScript Error Reporting
+* Module can be enabled / disabled via configuration
+  - Admin -> Stores -> Settings -> Configuration -> Advanced -> System -> JavaScript Error Reporting
 
 ## Installation
 This module is available on packagist.org and installable via composer:
