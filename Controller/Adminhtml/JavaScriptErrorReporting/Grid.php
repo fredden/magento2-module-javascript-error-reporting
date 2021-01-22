@@ -8,7 +8,7 @@ use Magento\Framework\View\Result\PageFactory;
 
 class Grid extends Action
 {
-    const ADMIN_RESOURCE = 'Fredden_JavaScriptErrorReporting::grid';
+    const ADMIN_RESOURCE = 'Fredden_JavaScriptErrorReporting::view';
 
     protected $resultPageFactory;
 
