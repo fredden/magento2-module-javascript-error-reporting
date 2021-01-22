@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">fredden_javascripterrorreporting_detail.fredden_javascripterrorreporting_data_source</item>
+        </item>
+        <item name="template" xsi:type="string">templates/form/collapsible</item>
+    </argument>
+
+    <settings>
+        <buttons>
+            <button name="back" class="Fredden\JavaScriptErrorReporting\Block\Adminhtml\Edit\BackButton" />
+            <button name="delete" class="Fredden\JavaScriptErrorReporting\Block\Adminhtml\Edit\DeleteButton" />
+        </buttons>
+        <deps>
+            <dep>fredden_javascripterrorreporting_detail.fredden_javascripterrorreporting_data_source</dep>
+        </deps>
+    </settings>
+
+    <dataSource name="fredden_javascripterrorreporting_data_source">
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+        <dataProvider class="Fredden\JavaScriptErrorReporting\Ui\DataProvider\EventDataProvider" name="fredden_javascripterrorreporting_data_source">
+            <settings>
+                <requestFieldName>id</requestFieldName>
+                <primaryFieldName>event_id</primaryFieldName>
+            </settings>
+        </dataProvider>
+    </dataSource>
+
+    <fieldset name="error">
+        <settings>
+            <label translate="true">Error Information</label>
+        </settings>
+
+        <field name="created_at" formElement="input">
+            <settings>
+                <elementTmpl>ui/form/element/text</elementTmpl>
+                <label translate="true">Created At</label>
+                <imports>
+                    <link name="value">${ $.provider }:data.general.created_at</link>
+                </imports>
+            </settings>
+        </field>
+
+        <field name="error_message" formElement="input">
+            <settings>
+                <elementTmpl>ui/form/element/text</elementTmpl>
+                <label translate="true">Error Message</label>
+                <imports>
+                    <link name="value">${ $.provider }:data.general.error_message</link>
+                </imports>
+            </settings>
+        </field>
+
+        <field name="stack_trace" formElement="input">
+            <settings>
+                <elementTmpl>ui/form/element/text</elementTmpl>
+                <label translate="true">Stack Trace</label>
+                <imports>
+                    <link name="value">${ $.provider }:data.general.stack_trace</link>
+                </imports>
+            </settings>
+        </field>
+
+        <field name="error_file" formElement="input">
+            <settings>
+                <elementTmpl>ui/form/element/text</elementTmpl>
+                <label translate="true">Error File</label>
+                <imports>
+                    <link name="value">${ $.provider }:data.general.error_file</link>
+                </imports>
+            </settings>
+        </field>
+
+        <field name="line" formElement="input">
+            <settings>
+                <elementTmpl>ui/form/element/text</elementTmpl>
+                <label translate="true">Line number</label>
+                <imports>
+                    <link name="value">${ $.provider }:data.general.line</link>
+                </imports>
+            </settings>
+        </field>
+
+        <field name="column" formElement="input">
+            <settings>
+                <elementTmpl>ui/form/element/text</elementTmpl>
+                <label translate="true">Column</label>
+                <imports>
+                    <link name="value">${ $.provider }:data.general.column</link>
+                </imports>
+            </settings>
+        </field>
+    </fieldset>
+
+    <fieldset name="browser">
+        <settings>
+            <label translate="true">Browser Information</label>
+        </settings>
+
+        <field name="user_agent" formElement="input">
+            <settings>
+                <elementTmpl>ui/form/element/text</elementTmpl>
+                <label translate="true">User Agent</label>
+                <imports>
+                    <link name="value">${ $.provider }:data.general.user_agent</link>
+                </imports>
+            </settings>
+        </field>
+
+        <field name="referrer" formElement="input">
+            <settings>
+                <elementTmpl>ui/form/element/text</elementTmpl>
+                <label translate="true">Referrer</label>
+                <imports>
+                    <link name="value">${ $.provider }:data.general.referrer</link>
+                </imports>
+            </settings>
+        </field>
+
+        <field name="url" formElement="input">
+            <settings>
+                <elementTmpl>ui/form/element/text</elementTmpl>
+                <label translate="true">URL</label>
+                <imports>
+                    <link name="value">${ $.provider }:data.general.url</link>
+                </imports>
+            </settings>
+        </field>
+
+        <field name="browser_width" formElement="input">
+            <settings>
+                <elementTmpl>ui/form/element/text</elementTmpl>
+                <label translate="true">Viewport Width</label>
+                <imports>
+                    <link name="value">${ $.provider }:data.general.browser_width</link>
+                </imports>
+            </settings>
+        </field>
+
+        <field name="browser_height" formElement="input">
+            <settings>
+                <elementTmpl>ui/form/element/text</elementTmpl>
+                <label translate="true">Viewport Height</label>
+                <imports>
+                    <link name="value">${ $.provider }:data.general.browser_height</link>
+                </imports>
+            </settings>
+        </field>
+    </fieldset>
+</form>

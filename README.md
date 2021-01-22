@@ -50,6 +50,5 @@ Please note that issues relating to the problems that this module highlights in 
 
 ## Planned features
 - Ability to change how long errors are kept for (including option for 'forever')
-- View details of an individual event
 - Summary reports (grouped by message or file or user agent with frequency information)
 - Record errors encountered in adminhtml area

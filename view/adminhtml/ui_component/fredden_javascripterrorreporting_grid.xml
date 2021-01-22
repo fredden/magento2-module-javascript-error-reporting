@@ -105,5 +105,11 @@
                 <label translate="true">Column</label>
             </settings>
         </column>
+
+        <actionsColumn name="actions" class="Fredden\JavaScriptErrorReporting\Ui\Component\Listing\Column\EventActions">
+            <settings>
+                <indexField>event_id</indexField>
+            </settings>
+        </actionsColumn>
     </columns>
 </listing>
