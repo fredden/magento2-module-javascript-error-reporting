@@ -1,0 +1,59 @@
+<?php
+namespace Fredden\JavaScriptErrorReporting\Controller\Adminhtml\JavaScriptErrorReporting;
+
+use Exception;
+use Fredden\JavaScriptErrorReporting\Model\EventFactory;
+use Fredden\JavaScriptErrorReporting\Model\ResourceModel\Event\CollectionFactory;
+use Magento\Backend\App\Action;
+use Magento\Backend\App\Action\Context;
+use Magento\Framework\App\Action\HttpPostActionInterface;
+use Magento\Framework\Controller\ResultFactory;
+
+class DeleteAll extends Action implements HttpPostActionInterface
+{
+    const ADMIN_RESOURCE = 'Fredden_JavaScriptErrorReporting::delete';
+
+    protected $collectionFactory;
+    protected $eventFactory;
+
+    public function __construct(
+        Context $context,
+        CollectionFactory $collectionFactory,
+        EventFactory $eventFactory
+    ) {
+        parent::__construct($context);
+        $this->collectionFactory = $collectionFactory;
+        $this->eventFactory = $eventFactory;
+    }
+
+    public function execute()
+    {
+        $id = (int) $this->getRequest()->getParam('id');
+        $resultRedirect = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
+
+        if ($id) {
+            $title = "";
+            try {
+                $event = $this->eventFactory->create();
+                $event->load($id);
+
+                $collection = $this->collectionFactory->create();
+                $collection->addFieldToFilter('hash', $event->getHash());
+                $collectionSize = $collection->getSize();
+
+                foreach ($collection as $event) {
+                    $event->delete();
+                }
+
+                $this->messageManager->addSuccessMessage(__('Successfully deleted %1 event(s).', $collectionSize));
+            } catch (Exception $e) {
+                $this->messageManager->addErrorMessage($e->getMessage());
+                return $resultRedirect->setPath('*/*/detail', ['event_id' => $id]);
+            }
+        } else {
+            $this->messageManager->addErrorMessage(__('Unable to find that event to delete.'));
+        }
+
+        return $resultRedirect->setPath('*/*/grid');
+    }
+}

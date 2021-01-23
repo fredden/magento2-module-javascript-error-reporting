@@ -12,6 +12,7 @@
         <buttons>
             <button name="back" class="Fredden\JavaScriptErrorReporting\Block\Adminhtml\Edit\BackButton" />
             <button name="delete" class="Fredden\JavaScriptErrorReporting\Block\Adminhtml\Edit\DeleteButton" />
+            <button name="delete_all" class="Fredden\JavaScriptErrorReporting\Block\Adminhtml\Edit\DeleteAllButton" />
         </buttons>
         <deps>
             <dep>fredden_javascripterrorreporting_detail.fredden_javascripterrorreporting_data_source</dep>
