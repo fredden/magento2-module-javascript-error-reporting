@@ -8,6 +8,13 @@
     </argument>
 
     <settings>
+        <buttons>
+            <button name="statistics">
+                <url path="*/*/statistics"/>
+                <class>primary</class>
+                <label translate="true">Statistics</label>
+            </button>
+        </buttons>
         <spinner>fredden_javascripterrorreporting_grid_columns</spinner>
         <deps>
             <dep>fredden_javascripterrorreporting_grid.fredden_javascripterrorreporting_data_source</dep>
