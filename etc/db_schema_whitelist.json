@@ -12,10 +12,14 @@
             "stack_trace": true,
             "error_file": true,
             "line": true,
-            "column": true
+            "column": true,
+            "hash": true
         },
         "constraint": {
             "PRIMARY": true
+        },
+        "index": {
+            "FREDDEN_JAVASCRIPT_ERROR_REPORT_HASH": true
         }
     }
 }

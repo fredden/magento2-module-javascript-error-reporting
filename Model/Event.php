@@ -9,4 +9,15 @@ class Event extends AbstractModel
     {
         $this->_init(ResourceModel\Event::class);
     }
+
+    public function beforeSave()
+    {
+        $this->setHash(md5(implode('|', [
+            $this->getErrorMessage(),
+            $this->getErrorFile(),
+            $this->getLine(),
+            $this->getColumn(),
+        ])));
+        return parent::beforeSave();
+    }
 }

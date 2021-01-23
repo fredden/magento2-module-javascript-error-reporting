@@ -14,8 +14,12 @@
         <column xsi:type="varchar" name="error_file" nullable="false" length="1024" default="" />
         <column xsi:type="int" name="line" unsigned="true" nullable="false" default="0" />
         <column xsi:type="int" name="column" unsigned="true" nullable="false" default="0" />
+        <column xsi:type="char" name="hash" nullable="false" length="32" default="" />
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="event_id"/>
         </constraint>
+        <index referenceId="FREDDEN_JAVASCRIPT_ERROR_REPORT_HASH" indexType="btree">
+            <column name="hash" />
+        </index>
     </table>
 </schema>
