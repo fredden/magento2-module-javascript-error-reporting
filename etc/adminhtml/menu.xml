@@ -8,7 +8,7 @@
             sortOrder="1000"
             parent="Magento_Reports::report"
             resource="Fredden_JavaScriptErrorReporting::view"
-            action="fredden/JavaScriptErrorReporting/grid"
+            action="fredden/JavaScriptErrorReporting/statistics"
             />
     </menu>
 </config>
