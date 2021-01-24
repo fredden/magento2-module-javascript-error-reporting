@@ -1,0 +1,37 @@
+<div class="row">
+    <div class="col-m-6 col-xl-4">
+        <canvas id="chart_hourly" />
+    </div>
+    <div class="col-m-6 col-xl-4">
+        <canvas id="chart_daily" />
+    </div>
+    <div class="col-m-6 col-xl-4">
+        <canvas id="chart_weekly" />
+    </div>
+</div>
+
+<p><?= $block->escapeHtml(__('Note that the above charts use UTC,' .
+    ' whereas the below will be in the timezone configured.')); ?></p>
+
+<script type="text/x-magento-init">
+{
+    "#chart_hourly": {
+        "Fredden_JavaScriptErrorReporting/chart": {
+            "title": "<?= $block->escapeHtml(__('Error rate per hour')); ?>",
+            "data": <?= /* @noEscape */ $block->getCharts()->getHourlyData(); ?>
+        }
+    },
+    "#chart_daily": {
+        "Fredden_JavaScriptErrorReporting/chart": {
+            "title": "<?= $block->escapeHtml(__('Error rate per day')); ?>",
+            "data": <?= /* @noEscape */ $block->getCharts()->getDailyData(); ?>
+        }
+    },
+    "#chart_weekly": {
+        "Fredden_JavaScriptErrorReporting/chart": {
+            "title": "<?= $block->escapeHtml(__('Error rate per week')); ?>",
+            "data": <?= /* @noEscape */ $block->getCharts()->getWeeklyData(); ?>
+        }
+    }
+}
+</script>

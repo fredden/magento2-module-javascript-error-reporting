@@ -19,6 +19,7 @@
             "PRIMARY": true
         },
         "index": {
+            "FREDDEN_JAVASCRIPT_ERROR_REPORT_CREATED_AT": true,
             "FREDDEN_JAVASCRIPT_ERROR_REPORT_HASH": true
         }
     }

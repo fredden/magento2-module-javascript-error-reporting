@@ -18,6 +18,9 @@
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="event_id"/>
         </constraint>
+        <index referenceId="FREDDEN_JAVASCRIPT_ERROR_REPORT_CREATED_AT" indexType="btree">
+            <column name="created_at" />
+        </index>
         <index referenceId="FREDDEN_JAVASCRIPT_ERROR_REPORT_HASH" indexType="btree">
             <column name="hash" />
         </index>

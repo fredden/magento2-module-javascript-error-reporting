@@ -8,6 +8,12 @@
     </argument>
 
     <settings>
+        <buttons>
+            <button name="grid">
+                <url path="*/*/grid"/>
+                <label translate="true">List individual errors</label>
+            </button>
+        </buttons>
         <spinner>fredden_javascripterrorreporting_summary_columns</spinner>
         <deps>
             <dep>fredden_javascripterrorreporting_summary.fredden_javascripterrorreporting_data_source</dep>

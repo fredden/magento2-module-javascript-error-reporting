@@ -3,6 +3,12 @@
         xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
+            <block name="charts" template="Fredden_JavaScriptErrorReporting::statistics/charts.phtml">
+                <arguments>
+                    <argument name="charts" xsi:type="object">Fredden\JavaScriptErrorReporting\ViewModel\Charts</argument>
+                </arguments>
+            </block>
+
             <uiComponent name="fredden_javascripterrorreporting_summary"/>
         </referenceContainer>
     </body>
