@@ -1,4 +1,16 @@
-/*global define */
+/* global define, requirejs */
+
+// This isn't nice. Reconfigure the path to chartJs to use a CDN as fall-back
+// because chartJs is not available by default in Magento v2.3 (but is in v2.4)
+requirejs.config({
+    paths: {
+        chartJs: [
+            'chartjs/Chart.min',
+            'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min',
+        ],
+    }
+});
+
 define([
     'chartJs',
 ], function (Chart) {
