@@ -5,10 +5,9 @@ use Exception;
 use Fredden\JavaScriptErrorReporting\Model\EventFactory;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
-use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\Controller\ResultFactory;
 
-class Delete extends Action implements HttpPostActionInterface
+class Delete extends Action
 {
     const ADMIN_RESOURCE = 'Fredden_JavaScriptErrorReporting::delete';
 

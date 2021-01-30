@@ -17,4 +17,15 @@ class EventDataProvider extends AbstractDataProvider
         parent::__construct($name, $primaryFieldName, $requestFieldName, $meta, $data);
         $this->collection = $collectionFactory->create();
     }
+
+    public function getData()
+    {
+        $data = parent::getData();
+        if (isset($data['items']) && is_array($data['items'])) {
+            foreach ($data['items'] as &$item) {
+                $item['id_field_name'] = 'event_id';
+            }
+        }
+        return $data;
+    }
 }

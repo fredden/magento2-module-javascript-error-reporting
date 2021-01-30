@@ -4,11 +4,10 @@ namespace Fredden\JavaScriptErrorReporting\Controller\Adminhtml\JavaScriptErrorR
 use Fredden\JavaScriptErrorReporting\Model\ResourceModel\Event\CollectionFactory;
 use Magento\Backend\App\Action;
 use Magento\Backend\App\Action\Context;
-use Magento\Framework\App\Action\HttpPostActionInterface;
 use Magento\Framework\Controller\ResultFactory;
 use Magento\Ui\Component\MassAction\Filter;
 
-class MassDelete extends Action implements HttpPostActionInterface
+class MassDelete extends Action
 {
     const ADMIN_RESOURCE = 'Fredden_JavaScriptErrorReporting::delete';
 
