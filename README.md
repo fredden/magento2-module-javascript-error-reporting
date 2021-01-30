@@ -35,8 +35,12 @@ This module uses [semantic versioning (semver)](http://semver.org/).
 ## Compatibility
 |Version|Magento Open Source|Magento Commerce Edition|
 |-|-|-|
-|2.3.x|:white_check_mark: Yes|:white_check_mark: Yes|
-|2.4.x|:white_check_mark: Yes|:white_check_mark: Yes|
+|2.0.x|:x: *unsupported*|:x: *unsupported*|
+|2.1.x|:x: *unsupported*|:x: *unsupported*|
+|2.2.x|:white_check_mark: Yes `^0.1`|:white_check_mark: Yes `^0.1`|
+|2.3.x|:white_check_mark: Yes `^1.2.2`|:white_check_mark: Yes `^1.2.2`|
+|2.4.x|:white_check_mark: Yes `^1.0.1`|:white_check_mark: Yes `^1.0.1`|
+|2.5.x|:question: *unknown*|:question: *unknown*|
 
 PHP version 7.1 or better is required.
 
