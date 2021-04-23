@@ -18,7 +18,7 @@
                         showInWebsite="1"
                         showInStore="1"
                         canRestore="1">
-                    <label>Module enabled</label>
+                    <label>Record errors</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
             </group>
