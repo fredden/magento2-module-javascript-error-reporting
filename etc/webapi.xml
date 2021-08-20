@@ -2,7 +2,7 @@
 <routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
     <route url="/V1/fredden/javascript-error-reporting" method="POST">
-        <service class="Fredden\JavaScriptErrorReporting\Api\Receiver"
+        <service class="Fredden\JavaScriptErrorReporting\Api\ReceiverInterface"
             method="saveErrorInformation" />
         <resources>
             <resource ref="anonymous" />
