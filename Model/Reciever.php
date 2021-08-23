@@ -20,9 +20,7 @@ class Reciever implements ReceiverInterface
     }
 
     /**
-     * Docblock required by Magento webapi implementaion
-     *
-     * @return void
+     * @inheritDoc
      */
     public function saveErrorInformation(): void
     {
