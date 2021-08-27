@@ -1,10 +1,12 @@
 <?php
-namespace Fredden\JavaScriptErrorReporting\Api;
 
+namespace Fredden\JavaScriptErrorReporting\Model;
+
+use Fredden\JavaScriptErrorReporting\Api\ReceiverInterface;
 use Fredden\JavaScriptErrorReporting\Model\EventFactory;
 use Magento\Framework\Webapi\Rest\Request;
 
-class Receiver
+class Reciever implements ReceiverInterface
 {
     protected $eventFactory;
     protected $request;
@@ -18,9 +20,7 @@ class Receiver
     }
 
     /**
-     * Docblock required by Magento webapi implementaion
-     *
-     * @return void
+     * @inheritDoc
      */
     public function saveErrorInformation(): void
     {
