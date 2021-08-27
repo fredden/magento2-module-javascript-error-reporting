@@ -6,7 +6,7 @@ requirejs.config({
     paths: {
         chartJs: [
             'chartjs/Chart.min',
-            'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min',
+            'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.3.2/chart.min',
         ],
     }
 });
@@ -28,26 +28,28 @@ define([
                     backgroundColor: '#f1d4b3',
                     borderColor: '#eb5202',
                     borderWidth: 1,
+                    // Preserve styles from Charts.js v2.9.3
+                    cubicInterpolationMode: 'monotone',
+                    fill: true,
                 }]
             },
             options: {
-                responsive: true,
-                title: {
-                    display: true,
-                    text: config.title,
-                },
-                legend: {
-                    onClick: function () {}, // disable toggle
-                    position: 'bottom',
+                plugins: {
+                    legend: {
+                        onClick: function () {}, // disable toggle
+                        position: 'bottom',
+                    },
+                    title: {
+                        display: true,
+                        text: config.title,
+                    },
                 },
                 scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true,
-                        },
-                    }]
-                }
-            }
+                    y: {
+                        beginAtZero: true,
+                    },
+                },
+            },
         });
     };
 });
