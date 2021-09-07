@@ -12,12 +12,19 @@ class Event extends AbstractModel
 
     public function beforeSave()
     {
+        $fileWithoutVersion = preg_replace(
+            '_/static/version\d+/_',
+            '/static/',
+            $this->getErrorFile()
+        );
+
         $this->setHash(md5(implode('|', [
             $this->getErrorMessage(),
-            $this->getErrorFile(),
+            $fileWithoutVersion,
             $this->getLine(),
             $this->getColumn(),
         ])));
+
         return parent::beforeSave();
     }
 }
