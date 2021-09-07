@@ -21,6 +21,18 @@
                     <label>Record errors</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
+                <field id="days_to_keep"
+                        translate="label comment"
+                        type="text"
+                        sortOrder="20"
+                        showInDefault="1"
+                        showInWebsite="0"
+                        showInStore="0"
+                        canRestore="1">
+                    <label>Keep error reports for up to this many days</label>
+                    <comment><![CDATA[Use <code>0</code> (zero) to keep errors forever]]></comment>
+                    <validate>integer no-whitespace required-entry validate-zero-or-greater</validate>
+                </field>
             </group>
         </section>
     </system>

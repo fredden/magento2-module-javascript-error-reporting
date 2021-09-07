@@ -6,7 +6,7 @@
 
 ## Overview
 A Magento 2 module which captures JavaScript errors for later review by website administrators.
-JavaScript errors are kept for up to 90 days and available via Magento's administration back-end.
+JavaScript errors are kept for up to 180 days (configurable) and available via Magento's administration back-end.
 
 <details open><summary>Screen-shot of summary view in admin area</summary>
 
@@ -59,5 +59,4 @@ or an issue on GitHub if you are encountering a problem with this module.
 Please note that issues relating to the problems that this module highlights in others' code are out of scope for support here.
 
 ## Planned features
-- Ability to change how long errors are kept for (including option for 'forever')
 - Record errors encountered in adminhtml area

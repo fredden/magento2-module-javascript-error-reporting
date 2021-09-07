@@ -5,6 +5,7 @@
         <system>
             <fredden_javascript_error_reporting>
                 <enabled>1</enabled>
+                <days_to_keep>180</days_to_keep>
             </fredden_javascript_error_reporting>
         </system>
     </default>

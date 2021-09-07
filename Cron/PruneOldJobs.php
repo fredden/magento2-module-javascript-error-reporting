@@ -4,29 +4,37 @@ namespace Fredden\JavaScriptErrorReporting\Cron;
 use DateInterval;
 use DateTime;
 use Fredden\JavaScriptErrorReporting\Model\ResourceModel\Event\CollectionFactory;
+use Fredden\JavaScriptErrorReporting\Scope\Config;
 use Magento\Cron\Model\Schedule;
 use Magento\Cron\Model\ScheduleFactory;
 
 class PruneOldJobs
 {
     const EVENTS_PER_RUN = 40;
-    const EXPIRY = 'P90D';
 
     protected $collectionFactory;
+    protected $config;
     protected $scheduleFactory;
 
     public function __construct(
         CollectionFactory $collectionFactory,
+        Config $config,
         ScheduleFactory $scheduleFactory
     ) {
         $this->collectionFactory = $collectionFactory;
+        $this->config = $config;
         $this->scheduleFactory = $scheduleFactory;
     }
 
-    public function execute()
+    public function execute(): void
     {
+        $daysToKeep = $this->config->getDaysToKeep();
+        if ($daysToKeep <= 0) {
+            return;
+        }
+
         $date = new DateTime();
-        $date->sub(new DateInterval(self::EXPIRY));
+        $date->sub(new DateInterval('P' . $daysToKeep . 'D'));
 
         $collection = $this->collectionFactory->create()
             ->setPageSize(self::EVENTS_PER_RUN)
