@@ -97,6 +97,16 @@
                 </imports>
             </settings>
         </field>
+
+        <field name="timer" formElement="input">
+            <settings>
+                <elementTmpl>ui/form/element/text</elementTmpl>
+                <label translate="true">Seconds since page load</label>
+                <imports>
+                    <link name="value">${ $.provider }:data.general.timer</link>
+                </imports>
+            </settings>
+        </field>
     </fieldset>
 
     <fieldset name="browser">

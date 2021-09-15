@@ -23,6 +23,7 @@
                 lineno: event.lineno,
                 message: event.message,
                 stack: event.error && event.error.stack,
+                timer: (performance.now() / 1000).toFixed(2),
             },
         }));
     });

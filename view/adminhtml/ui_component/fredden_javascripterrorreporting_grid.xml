@@ -113,6 +113,14 @@
             </settings>
         </column>
 
+        <column name="timer">
+            <settings>
+                <filter>textRange</filter>
+                <bodyTmpl>ui/grid/cells/text</bodyTmpl>
+                <label translate="true">Seconds since page load</label>
+            </settings>
+        </column>
+
         <actionsColumn name="actions" class="Fredden\JavaScriptErrorReporting\Ui\Component\Listing\Column\EventActions">
             <settings>
                 <indexField>event_id</indexField>

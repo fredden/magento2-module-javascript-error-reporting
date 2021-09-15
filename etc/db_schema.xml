@@ -14,6 +14,7 @@
         <column xsi:type="varchar" name="error_file" nullable="false" length="1024" default="" />
         <column xsi:type="int" name="line" unsigned="true" nullable="false" default="0" />
         <column xsi:type="int" name="column" unsigned="true" nullable="false" default="0" />
+        <column xsi:type="decimal" name="timer" scale="2" precision="7" unsigned="true" nullable="false" default="0" />
         <column xsi:type="varchar" name="hash" nullable="false" length="32" default="" />
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="event_id"/>

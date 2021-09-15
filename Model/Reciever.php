@@ -43,6 +43,7 @@ class Reciever implements ReceiverInterface
         $event->setErrorFile($parameters['event']['filename'] ?? '');
         $event->setLine($parameters['event']['lineno'] ?? 0);
         $event->setColumn($parameters['event']['colno'] ?? 0);
+        $event->setTimer($parameters['event']['timer'] ?? 0);
 
         $event->save();
     }
