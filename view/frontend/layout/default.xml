@@ -4,10 +4,14 @@
     <body>
         <referenceContainer name="after.body.start">
             <block name="fredden.javascript-error-reporting"
-                before="-"
-                template="Fredden_JavaScriptErrorReporting::script.phtml"
-                ifconfig="system/fredden_javascript_error_reporting/enabled"
-                />
+                    before="-"
+                    template="Fredden_JavaScriptErrorReporting::script.phtml"
+                    ifconfig="system/fredden_javascript_error_reporting/enabled"
+                    >
+                <arguments>
+                    <argument name="api_url" xsi:type="serviceUrl" path="fredden/javascript-error-reporting" />
+                </arguments>
+            </block>
         </referenceContainer>
     </body>
 </page>

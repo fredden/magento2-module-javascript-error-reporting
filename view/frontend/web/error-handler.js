@@ -1,8 +1,10 @@
 (function () {
     'use strict';
 
+    var url = (document.currentScript && document.currentScript.dataset && document.currentScript.dataset.reportUrl) ||
+        ((window.BASE_URL || '') + '/rest/V1/fredden/javascript-error-reporting');
+
     window.addEventListener('error', function (event) {
-        var url = (window.BASE_URL || '') + '/rest/V1/fredden/javascript-error-reporting';
         var xhr = new XMLHttpRequest();
 
         if (!event) {
