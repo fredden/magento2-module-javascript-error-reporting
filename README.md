@@ -15,7 +15,7 @@ JavaScript errors are kept for up to 180 days (configurable) and available via M
 </details>
 
 ## Features
-* JavaScript errors on the front-end are recorded for later review
+* JavaScript errors are recorded for later review
   - JavaScript error message
   - File (URL), line number, column number of exception if available
   - Stack trace of exception if available
@@ -57,6 +57,3 @@ Community contributions are welcome.
 Please open a pull request on GitHub if you have a code suggestion,
 or an issue on GitHub if you are encountering a problem with this module.
 Please note that issues relating to the problems that this module highlights in others' code are out of scope for support here.
-
-## Planned features
-- Record errors encountered in adminhtml area
