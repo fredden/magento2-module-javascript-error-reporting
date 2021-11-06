@@ -1,3 +1,4 @@
 <?php $assetUrl = $block->getViewFileUrl('Fredden_JavaScriptErrorReporting::error-handler.js'); ?>
+<?php $apiUrl = preg_replace('_/rest/[^/]+/V1/_', '/rest/V1/', $block->getApiUrl()); ?>
 <script async src="<?= $block->escapeUrl($assetUrl) ?>"
-  data-report-url="<?= $block->escapeUrl($block->getApiUrl()) ?>"></script>
+  data-report-url="<?= $block->escapeUrl($apiUrl) ?>"></script>
