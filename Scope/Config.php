@@ -3,8 +3,9 @@ namespace Fredden\JavaScriptErrorReporting\Scope;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
 use Magento\Framework\FlagManager;
+use Magento\Framework\View\Element\Block\ArgumentInterface;
 
-class Config
+class Config implements ArgumentInterface
 {
     const XML_PATH_DAYS_TO_KEEP = 'system/fredden_javascript_error_reporting/days_to_keep';
     protected const FLAG_NAME = 'fredden_js_ignored_hashes';
