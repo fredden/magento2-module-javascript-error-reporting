@@ -4,16 +4,43 @@
     var url = (document.currentScript && document.currentScript.dataset && document.currentScript.dataset.reportUrl) ||
         ((window.BASE_URL || '') + '/rest/V1/fredden/javascript-error-reporting');
 
-    window.addEventListener('error', function (event) {
-        var xhr = new XMLHttpRequest();
+    var sendDelay = 0;
+    var sendQueue = [];
+    var sendTimer;
 
+    var sendError = function () {
+        var xhr;
+
+        window.clearTimeout(sendTimer);
+
+        if (!sendQueue.length) {
+            return;
+        }
+
+        xhr = new XMLHttpRequest();
+        xhr.open('POST', url, true);
+        xhr.setRequestHeader('Content-Type', 'application/json');
+        xhr.send(JSON.stringify(sendQueue.shift()));
+
+        sendDelay += 10;
+        sendTimer = window.setTimeout(sendError, sendDelay);
+    };
+
+    window.addEventListener('error', function (event) {
         if (!event) {
             return;
         }
 
-        xhr.open('POST', url, true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.send(JSON.stringify({
+        if (sendQueue.length > 100) {
+            // That's a lot of errors! Let's not overwhelm the server with more.
+            return;
+        }
+
+        if (!sendQueue.length) {
+            sendTimer = window.setTimeout(sendError, sendDelay);
+        }
+
+        sendQueue.push({
             browser: {
                 height: window.innerHeight,
                 url: window.location.href,
@@ -27,6 +54,6 @@
                 stack: event.error && event.error.stack,
                 timer: (performance.now() / 1000).toFixed(2),
             },
-        }));
+        });
     });
 }());
