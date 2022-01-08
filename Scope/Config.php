@@ -60,4 +60,9 @@ class Config implements ArgumentInterface
     {
         $this->flagManager->deleteFlag(self::FLAG_NAME);
     }
+
+    public function replaceIgnoreList(string $newList): void
+    {
+        $this->flagManager->saveFlag(self::FLAG_NAME, $newList);
+    }
 }

@@ -7,5 +7,10 @@
                 method="execute">
             <schedule>47 23 * * *</schedule>
         </job>
+        <job name="fredden_javascript_error_reporting_prune_ignore_list"
+             instance="Fredden\JavaScriptErrorReporting\Cron\PruneIgnoreList"
+             method="execute">
+            <schedule>4 10 * * 0</schedule>
+        </job>
     </group>
 </config>
