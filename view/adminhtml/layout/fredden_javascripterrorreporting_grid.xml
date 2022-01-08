@@ -4,6 +4,12 @@
     <body>
         <referenceContainer name="content">
             <uiComponent name="fredden_javascripterrorreporting_grid"/>
+
+            <block name="ignored_hashes" template="Fredden_JavaScriptErrorReporting::ignored_hashes.phtml">
+                <arguments>
+                    <argument name="config" xsi:type="object">Fredden\JavaScriptErrorReporting\Scope\Config</argument>
+                </arguments>
+            </block>
         </referenceContainer>
     </body>
 </page>

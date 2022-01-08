@@ -1,0 +1,8 @@
+<?php
+$count = count($block->getConfig()->getIgnoredHashes());
+
+if ($count): ?>
+    <p>
+        <?= $block->escapeHtml(__('The above list has been filtered to ignore %1 errors.', $count)) ?>
+    </p>
+<?php endif;
