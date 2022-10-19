@@ -73,7 +73,7 @@
 
         <column name="error_file">
             <settings>
-                <bodyTmpl>ui/grid/cells/text</bodyTmpl>
+                <bodyTmpl>ui/grid/cells/html</bodyTmpl>
                 <draggable>false</draggable>
                 <sortable>false</sortable>
                 <label translate="true">File</label>

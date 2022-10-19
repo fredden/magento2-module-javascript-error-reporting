@@ -71,7 +71,7 @@
 
         <field name="error_file" formElement="input">
             <settings>
-                <elementTmpl>ui/form/element/text</elementTmpl>
+                <elementTmpl>ui/form/element/html</elementTmpl>
                 <label translate="true">Error File</label>
                 <imports>
                     <link name="value">${ $.provider }:data.general.error_file</link>
@@ -137,7 +137,7 @@
 
         <field name="url" formElement="input">
             <settings>
-                <elementTmpl>ui/form/element/text</elementTmpl>
+                <elementTmpl>ui/form/element/html</elementTmpl>
                 <label translate="true">URL</label>
                 <imports>
                     <link name="value">${ $.provider }:data.general.url</link>

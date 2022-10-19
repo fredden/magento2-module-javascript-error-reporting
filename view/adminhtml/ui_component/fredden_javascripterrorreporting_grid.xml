@@ -92,7 +92,7 @@
         <column name="error_file">
             <settings>
                 <filter>text</filter>
-                <bodyTmpl>ui/grid/cells/text</bodyTmpl>
+                <bodyTmpl>ui/grid/cells/html</bodyTmpl>
                 <label translate="true">File</label>
             </settings>
         </column>

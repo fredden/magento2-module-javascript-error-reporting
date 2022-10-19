@@ -24,4 +24,28 @@ class EventDataProvider extends AbstractDataProvider
             $this->collection->getSelect()->where('hash NOT IN (?)', $ignoredHashes);
         }
     }
+
+    public function getData()
+    {
+        $data = parent::getData();
+
+        if (!empty($data['items'])) {
+            foreach ($data['items'] as &$item) {
+                foreach (['error_file', 'url'] as $key) {
+                    $item[$key] = str_replace(
+                        ';',
+                        ';<wbr>',
+                        htmlentities(
+                            $item[$key],
+                            ENT_QUOTES | ENT_HTML5
+                        )
+                    );
+                }
+            }
+
+            unset($item); // avoid side effects from $item being a reference
+        }
+
+        return $data;
+    }
 }
