@@ -98,6 +98,14 @@
             </settings>
         </column>
 
+        <column name="url">
+            <settings>
+                <filter>text</filter>
+                <bodyTmpl>ui/grid/cells/html</bodyTmpl>
+                <label translate="true">Page URL</label>
+            </settings>
+        </column>
+
         <actionsColumn name="actions" class="Fredden\JavaScriptErrorReporting\Ui\Component\Listing\Column\EventActions">
             <settings>
                 <indexField>event_id</indexField>
