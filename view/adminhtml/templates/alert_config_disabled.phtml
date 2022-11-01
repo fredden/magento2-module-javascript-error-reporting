@@ -1,0 +1,32 @@
+<?php
+/** @var \Magento\Backend\Block\Template $block */
+$disabledScopes = $block->getDisabledScopes()->getDisabledScopes();
+
+if ($disabledScopes): ?>
+<aside class="message message-notice">
+    <?= $block->escapeHtml(__('JavaScript error reporting is currently disabled at the following scope(s):')) ?>
+    <?php
+    $lastItem = count($disabledScopes) - 1;
+    foreach ($disabledScopes as $i => $scope):
+        $urlParams = [
+            'section' => 'system',
+        ];
+
+        if ($scope[0] !== 'default') {
+            $urlParams[$scope[0]] = $scope[1];
+            $scopeLabel = implode(' ', $scope);
+        } else {
+            $scopeLabel = $scope[0];
+        }
+
+        $url = $block->getUrl('adminhtml/system_config/edit', $urlParams) . '#system_fredden_javascript_error_reporting-link';
+
+        $punctuation = $i === $lastItem ? '.' : ', ';
+
+        echo '<a href="' . $block->escapeHtmlAttr($block->escapeUrl($url)) . '">';
+        echo $scopeLabel;
+        echo '</a>' . $punctuation;
+    endforeach;
+    ?>
+</aside>
+<?php endif;
