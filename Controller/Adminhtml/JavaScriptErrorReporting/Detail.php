@@ -23,7 +23,7 @@ class Detail extends Action
     public function execute(): Page
     {
         $resultPage = $this->resultPageFactory->create();
-        $resultPage->setActiveMenu('Fredden_JavaScriptErrorReporting::grid');
+        $resultPage->setActiveMenu('Fredden_JavaScriptErrorReporting::view');
         $resultPage->getConfig()->getTitle()->prepend(__('JavaScript Error Reporting'));
         return $resultPage;
     }
