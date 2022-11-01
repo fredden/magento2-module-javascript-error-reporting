@@ -6,7 +6,7 @@
             title="JavaScript Error Reporting"
             module="Fredden_JavaScriptErrorReporting"
             sortOrder="1000"
-            parent="Magento_Reports::report"
+            parent="Magento_Reports::report_statistics"
             resource="Fredden_JavaScriptErrorReporting::view"
             action="fredden/JavaScriptErrorReporting/statistics"
             />
