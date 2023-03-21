@@ -1,4 +1,5 @@
 <?php
+
 namespace Fredden\JavaScriptErrorReporting\Controller\Adminhtml\JavaScriptErrorReporting;
 
 use Exception;
@@ -12,14 +13,11 @@ class Delete extends Action implements HttpPostActionInterface
 {
     const ADMIN_RESOURCE = 'Fredden_JavaScriptErrorReporting::delete';
 
-    protected $eventFactory;
-
     public function __construct(
         Context $context,
-        EventFactory $eventFactory
+        private readonly EventFactory $eventFactory
     ) {
         parent::__construct($context);
-        $this->eventFactory = $eventFactory;
     }
 
     public function execute()

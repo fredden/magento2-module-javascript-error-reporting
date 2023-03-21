@@ -1,4 +1,5 @@
 <?php
+
 namespace Fredden\JavaScriptErrorReporting\Controller\Adminhtml\JavaScriptErrorReporting;
 
 use Exception;
@@ -13,17 +14,12 @@ class IgnoreHash extends Action implements HttpPostActionInterface
 {
     const ADMIN_RESOURCE = 'Fredden_JavaScriptErrorReporting::ignore';
 
-    protected $config;
-    protected $eventFactory;
-
     public function __construct(
         Context $context,
-        Config $config,
-        EventFactory $eventFactory
+        private readonly Config $config,
+        private readonly EventFactory $eventFactory,
     ) {
         parent::__construct($context);
-        $this->config = $config;
-        $this->eventFactory = $eventFactory;
     }
 
     public function execute()

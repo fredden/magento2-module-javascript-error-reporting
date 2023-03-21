@@ -1,4 +1,5 @@
 <?php
+
 namespace Fredden\JavaScriptErrorReporting\Cron;
 
 use DateInterval;
@@ -12,18 +13,11 @@ class PruneOldJobs
 {
     const EVENTS_PER_RUN = 40;
 
-    protected $collectionFactory;
-    protected $config;
-    protected $scheduleFactory;
-
     public function __construct(
-        CollectionFactory $collectionFactory,
-        Config $config,
-        ScheduleFactory $scheduleFactory
+        private readonly CollectionFactory $collectionFactory,
+        private readonly Config $config,
+        private readonly ScheduleFactory $scheduleFactory,
     ) {
-        $this->collectionFactory = $collectionFactory;
-        $this->config = $config;
-        $this->scheduleFactory = $scheduleFactory;
     }
 
     public function execute(): void

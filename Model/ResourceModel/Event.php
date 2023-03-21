@@ -1,4 +1,5 @@
 <?php
+
 namespace Fredden\JavaScriptErrorReporting\Model\ResourceModel;
 
 use Magento\Framework\Model\ResourceModel\Db\AbstractDb;

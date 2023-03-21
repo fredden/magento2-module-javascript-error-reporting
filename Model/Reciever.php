@@ -8,15 +8,10 @@ use Magento\Framework\Webapi\Rest\Request;
 
 class Reciever implements ReceiverInterface
 {
-    protected $eventFactory;
-    protected $request;
-
     public function __construct(
-        EventFactory $eventFactory,
-        Request $request
+        private readonly EventFactory $eventFactory,
+        private readonly Request $request,
     ) {
-        $this->eventFactory = $eventFactory;
-        $this->request = $request;
     }
 
     /**

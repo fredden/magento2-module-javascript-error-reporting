@@ -1,4 +1,5 @@
 <?php
+
 namespace Fredden\JavaScriptErrorReporting\ViewModel;
 
 use Fredden\JavaScriptErrorReporting\Model\ResourceModel\Event\CollectionFactory;
@@ -8,15 +9,10 @@ use Magento\Framework\View\Element\Block\ArgumentInterface;
 
 class Charts implements ArgumentInterface
 {
-    protected $collectionFactory;
-    protected $json;
-
     public function __construct(
-        CollectionFactory $collectionFactory,
-        Json $json
+        private readonly CollectionFactory $collectionFactory,
+        private readonly Json $json,
     ) {
-        $this->collectionFactory = $collectionFactory;
-        $this->json = $json;
     }
 
     public function getHourlyData(): string

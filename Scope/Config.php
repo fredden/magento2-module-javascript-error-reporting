@@ -1,4 +1,5 @@
 <?php
+
 namespace Fredden\JavaScriptErrorReporting\Scope;
 
 use Magento\Framework\App\Config\ScopeConfigInterface;
@@ -10,15 +11,10 @@ class Config implements ArgumentInterface
     const XML_PATH_DAYS_TO_KEEP = 'system/fredden_javascript_error_reporting/days_to_keep';
     protected const FLAG_NAME = 'fredden_js_ignored_hashes';
 
-    protected $flagManager;
-    protected $scopeConfig;
-
     public function __construct(
-        FlagManager $flagManager,
-        ScopeConfigInterface $scopeConfig
+        private readonly FlagManager $flagManager,
+        private readonly ScopeConfigInterface $scopeConfig,
     ) {
-        $this->flagManager = $flagManager;
-        $this->scopeConfig = $scopeConfig;
     }
 
     public function getDaysToKeep(): int

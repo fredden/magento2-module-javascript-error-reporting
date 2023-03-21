@@ -1,4 +1,5 @@
 <?php
+
 namespace Fredden\JavaScriptErrorReporting\Ui\DataProvider;
 
 use Fredden\JavaScriptErrorReporting\Model\ResourceModel\Event\CollectionFactory;

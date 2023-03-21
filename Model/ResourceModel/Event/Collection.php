@@ -1,4 +1,5 @@
 <?php
+
 namespace Fredden\JavaScriptErrorReporting\Model\ResourceModel\Event;
 
 use Fredden\JavaScriptErrorReporting\Model\Event as Model;

@@ -1,4 +1,5 @@
 <?php
+
 namespace Fredden\JavaScriptErrorReporting\Block\Adminhtml\Edit;
 
 use Magento\Backend\Ui\Component\Control\DeleteButton as MagentoDeleteButton;

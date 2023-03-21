@@ -1,4 +1,5 @@
 <?php
+
 namespace Fredden\JavaScriptErrorReporting\Controller\Adminhtml\JavaScriptErrorReporting;
 
 use Magento\Backend\App\Action;
@@ -10,14 +11,11 @@ class Detail extends Action
 {
     const ADMIN_RESOURCE = 'Fredden_JavaScriptErrorReporting::view';
 
-    protected $resultPageFactory;
-
     public function __construct(
-        PageFactory $resultPageFactory,
+        private readonly PageFactory $resultPageFactory,
         Context $context
     ) {
         parent::__construct($context);
-        $this->resultPageFactory = $resultPageFactory;
     }
 
     public function execute(): Page

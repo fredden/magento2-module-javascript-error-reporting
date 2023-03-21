@@ -1,4 +1,5 @@
 <?php
+
 namespace Fredden\JavaScriptErrorReporting\Block\Adminhtml\Edit;
 
 use Magento\Framework\UrlInterface;
@@ -6,12 +7,9 @@ use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
 
 class BackButton implements ButtonProviderInterface
 {
-    protected $urlBuilder;
-
     public function __construct(
-        UrlInterface $urlBuilder
+        private readonly UrlInterface $urlBuilder,
     ) {
-        $this->urlBuilder = $urlBuilder;
     }
 
     public function getButtonData()

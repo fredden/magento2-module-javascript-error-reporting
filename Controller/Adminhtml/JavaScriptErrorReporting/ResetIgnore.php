@@ -1,4 +1,5 @@
 <?php
+
 namespace Fredden\JavaScriptErrorReporting\Controller\Adminhtml\JavaScriptErrorReporting;
 
 use Fredden\JavaScriptErrorReporting\Scope\Config;
@@ -11,14 +12,11 @@ class ResetIgnore extends Action implements HttpPostActionInterface
 {
     public const ADMIN_RESOURCE = 'Fredden_JavaScriptErrorReporting::ignore';
 
-    protected $config;
-
     public function __construct(
         Context $context,
-        Config $config
+        private readonly Config $config,
     ) {
         parent::__construct($context);
-        $this->config = $config;
     }
 
     public function execute()

@@ -1,4 +1,5 @@
 <?php
+
 namespace Fredden\JavaScriptErrorReporting\ViewModel;
 
 use Magento\Config\Model\ResourceModel\Config\Data\CollectionFactory;
@@ -6,12 +7,9 @@ use Magento\Framework\View\Element\Block\ArgumentInterface;
 
 class DisabledScopes implements ArgumentInterface
 {
-    protected $configCollectionFactory;
-
     public function __construct(
-        CollectionFactory $configCollectionFactory
+        private readonly CollectionFactory $configCollectionFactory,
     ) {
-        $this->configCollectionFactory = $configCollectionFactory;
     }
 
     public function getDisabledScopes(): array

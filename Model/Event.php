@@ -1,4 +1,5 @@
 <?php
+
 namespace Fredden\JavaScriptErrorReporting\Model;
 
 use Magento\Framework\Model\AbstractModel;

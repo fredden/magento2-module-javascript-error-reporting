@@ -1,4 +1,5 @@
 <?php
+
 namespace Fredden\JavaScriptErrorReporting\Ui\Component\Listing\Column;
 
 use Magento\Ui\Component\Listing\Columns\Column;

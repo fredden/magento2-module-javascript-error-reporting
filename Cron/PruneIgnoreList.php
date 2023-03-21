@@ -1,4 +1,5 @@
 <?php
+
 namespace Fredden\JavaScriptErrorReporting\Cron;
 
 use Fredden\JavaScriptErrorReporting\Model\ResourceModel\Event\CollectionFactory;
@@ -7,15 +8,10 @@ use Magento\Cron\Model\ScheduleFactory;
 
 class PruneIgnoreList
 {
-    protected $collectionFactory;
-    protected $config;
-
     public function __construct(
-        CollectionFactory $collectionFactory,
-        Config $config
+        private readonly CollectionFactory $collectionFactory,
+        private readonly Config $config,
     ) {
-        $this->collectionFactory = $collectionFactory;
-        $this->config = $config;
     }
 
     public function execute(): void
