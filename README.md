@@ -40,7 +40,7 @@ composer require fredden/magento2-module-javascript-error-reporting
 This module uses [semantic versioning (semver)](http://semver.org/).
 
 ## Compatibility
-|Version|Magento Open Source|Magento Commerce Edition|
+|Version|Magento Open Source|Adobe Commerce|
 |-|-|-|
 |2.0.x|:x: *unsupported*|:x: *unsupported*|
 |2.1.x|:x: *unsupported*|:x: *unsupported*|
