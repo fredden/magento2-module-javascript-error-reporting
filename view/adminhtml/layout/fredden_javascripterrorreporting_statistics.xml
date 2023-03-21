@@ -11,6 +11,7 @@
             <block name="charts" template="Fredden_JavaScriptErrorReporting::statistics/charts.phtml">
                 <arguments>
                     <argument name="charts" xsi:type="object">Fredden\JavaScriptErrorReporting\ViewModel\Charts</argument>
+                    <argument name="config" xsi:type="object">Fredden\JavaScriptErrorReporting\Scope\Config</argument>
                 </arguments>
             </block>
 

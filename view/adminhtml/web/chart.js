@@ -25,8 +25,7 @@ define([
             options: {
                 plugins: {
                     legend: {
-                        onClick: function () {}, // disable toggle
-                        position: 'bottom',
+                        display: false,
                     },
                     title: {
                         display: true,
@@ -34,6 +33,9 @@ define([
                     },
                 },
                 scales: {
+                    x: {
+                        display: false,
+                    },
                     y: {
                         beginAtZero: true,
                     },

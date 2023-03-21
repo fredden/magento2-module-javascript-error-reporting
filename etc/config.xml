@@ -6,6 +6,9 @@
             <fredden_javascript_error_reporting>
                 <enabled>1</enabled>
                 <days_to_keep>180</days_to_keep>
+                <chart_show_hours>48</chart_show_hours>
+                <chart_show_days>21</chart_show_days>
+                <chart_show_weeks>52</chart_show_weeks>
             </fredden_javascript_error_reporting>
         </system>
     </default>

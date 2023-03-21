@@ -33,6 +33,39 @@
                     <comment><![CDATA[Use <code>0</code> (zero) to keep errors forever]]></comment>
                     <validate>integer no-whitespace required-entry validate-zero-or-greater</validate>
                 </field>
+                <field id="chart_show_hours"
+                       translate="label comment"
+                       type="text"
+                       sortOrder="42"
+                       showInDefault="1"
+                       showInWebsite="0"
+                       showInStore="0"
+                       canRestore="1">
+                    <label>Show this many hours on charts</label>
+                    <validate>integer no-whitespace required-entry validate-greater-than-zero</validate>
+                </field>
+                <field id="chart_show_days"
+                       translate="label comment"
+                       type="text"
+                       sortOrder="44"
+                       showInDefault="1"
+                       showInWebsite="0"
+                       showInStore="0"
+                       canRestore="1">
+                    <label>Show this many days on charts</label>
+                    <validate>integer no-whitespace required-entry validate-greater-than-zero</validate>
+                </field>
+                <field id="chart_show_weeks"
+                       translate="label comment"
+                       type="text"
+                       sortOrder="46"
+                       showInDefault="1"
+                       showInWebsite="0"
+                       showInStore="0"
+                       canRestore="1">
+                    <label>Show this many weeks on charts</label>
+                    <validate>integer no-whitespace required-entry validate-greater-than-zero</validate>
+                </field>
             </group>
         </section>
     </system>

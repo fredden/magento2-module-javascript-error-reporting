@@ -1,3 +1,10 @@
+<?php
+/** @var \Magento\Cms\Api\Data\BlockInterface $block */
+/** @var \Fredden\JavaScriptErrorReporting\Scope\Config $config */
+$config = $block->getConfig();
+/** @var \Fredden\JavaScriptErrorReporting\ViewModel\Charts $charts */
+$charts = $block->getCharts();
+?>
 <div class="row">
     <div class="col-m-6 col-xl-4">
         <canvas id="chart_hourly" />
@@ -10,27 +17,24 @@
     </div>
 </div>
 
-<p><?= $block->escapeHtml(__('Note that the above charts use UTC,' .
-    ' whereas the below will be in the timezone configured.')); ?></p>
-
 <script type="text/x-magento-init">
 {
     "#chart_hourly": {
         "Fredden_JavaScriptErrorReporting/chart": {
-            "title": "<?= $block->escapeHtml(__('Error rate per hour')); ?>",
-            "data": <?= /* @noEscape */ $block->getCharts()->getHourlyData(); ?>
+            "title": "<?= $block->escapeHtml(__('Error rate - last %1 hours', $config->getChartDisplayHowManyHours())); ?>",
+            "data": <?= /* @noEscape */ $charts->getHourlyData(); ?>
         }
     },
     "#chart_daily": {
         "Fredden_JavaScriptErrorReporting/chart": {
-            "title": "<?= $block->escapeHtml(__('Error rate per day')); ?>",
-            "data": <?= /* @noEscape */ $block->getCharts()->getDailyData(); ?>
+            "title": "<?= $block->escapeHtml(__('Error rate - last %1 days', $config->getChartDisplayHowManyDays())); ?>",
+            "data": <?= /* @noEscape */ $charts->getDailyData(); ?>
         }
     },
     "#chart_weekly": {
         "Fredden_JavaScriptErrorReporting/chart": {
-            "title": "<?= $block->escapeHtml(__('Error rate per week')); ?>",
-            "data": <?= /* @noEscape */ $block->getCharts()->getWeeklyData(); ?>
+            "title": "<?= $block->escapeHtml(__('Error rate - last %1 weeks', $config->getChartDisplayHowManyWeeks())); ?>",
+            "data": <?= /* @noEscape */ $charts->getWeeklyData(); ?>
         }
     }
 }
