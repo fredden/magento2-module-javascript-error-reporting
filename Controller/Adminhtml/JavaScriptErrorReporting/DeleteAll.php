@@ -12,7 +12,7 @@ use Magento\Framework\Controller\ResultFactory;
 
 class DeleteAll extends Action implements HttpPostActionInterface
 {
-    const ADMIN_RESOURCE = 'Fredden_JavaScriptErrorReporting::delete';
+    public const ADMIN_RESOURCE = 'Fredden_JavaScriptErrorReporting::delete';
 
     public function __construct(
         Context $context,

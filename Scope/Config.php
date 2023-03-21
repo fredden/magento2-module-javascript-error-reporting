@@ -8,11 +8,11 @@ use Magento\Framework\View\Element\Block\ArgumentInterface;
 
 class Config implements ArgumentInterface
 {
-    const XML_PATH_DAYS_TO_KEEP = 'system/fredden_javascript_error_reporting/days_to_keep';
-    protected const FLAG_NAME = 'fredden_js_ignored_hashes';
-    private const XML_PATH_CHART_SHOW_HOURS = 'system/fredden_javascript_error_reporting/chart_show_hours';
+    private const FLAG_NAME = 'fredden_js_ignored_hashes';
     private const XML_PATH_CHART_SHOW_DAYS = 'system/fredden_javascript_error_reporting/chart_show_days';
+    private const XML_PATH_CHART_SHOW_HOURS = 'system/fredden_javascript_error_reporting/chart_show_hours';
     private const XML_PATH_CHART_SHOW_WEEKS = 'system/fredden_javascript_error_reporting/chart_show_weeks';
+    private const XML_PATH_DAYS_TO_KEEP = 'system/fredden_javascript_error_reporting/days_to_keep';
 
     public function __construct(
         private readonly FlagManager $flagManager,

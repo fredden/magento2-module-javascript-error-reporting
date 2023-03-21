@@ -11,7 +11,7 @@ use Magento\Cron\Model\ScheduleFactory;
 
 class PruneOldJobs
 {
-    const EVENTS_PER_RUN = 400;
+    private const EVENTS_PER_RUN = 400;
 
     public function __construct(
         private readonly CollectionFactory $collectionFactory,

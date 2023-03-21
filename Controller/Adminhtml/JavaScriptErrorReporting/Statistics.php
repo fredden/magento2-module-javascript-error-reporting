@@ -9,7 +9,7 @@ use Magento\Framework\View\Result\PageFactory;
 
 class Statistics extends Action
 {
-    const ADMIN_RESOURCE = 'Fredden_JavaScriptErrorReporting::view';
+    public const ADMIN_RESOURCE = 'Fredden_JavaScriptErrorReporting::view';
 
     public function __construct(
         private readonly PageFactory $resultPageFactory,

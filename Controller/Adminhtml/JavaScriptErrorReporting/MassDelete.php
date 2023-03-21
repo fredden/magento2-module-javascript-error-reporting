@@ -11,7 +11,7 @@ use Magento\Ui\Component\MassAction\Filter;
 
 class MassDelete extends Action implements HttpPostActionInterface
 {
-    const ADMIN_RESOURCE = 'Fredden_JavaScriptErrorReporting::delete';
+    public const ADMIN_RESOURCE = 'Fredden_JavaScriptErrorReporting::delete';
 
     public function __construct(
         Context $context,

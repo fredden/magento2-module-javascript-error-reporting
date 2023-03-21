@@ -12,7 +12,7 @@ use Magento\Framework\Controller\ResultFactory;
 
 class IgnoreHash extends Action implements HttpPostActionInterface
 {
-    const ADMIN_RESOURCE = 'Fredden_JavaScriptErrorReporting::ignore';
+    public const ADMIN_RESOURCE = 'Fredden_JavaScriptErrorReporting::ignore';
 
     public function __construct(
         Context $context,
