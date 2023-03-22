@@ -44,8 +44,8 @@ class PruneOldJobs
             $this->scheduleFactory->create()
                 ->setJobCode('fredden_javascript_error_reporting_prune')
                 ->setStatus(Schedule::STATUS_PENDING)
-                ->setCreatedAt(strftime('%Y-%m-%d %H:%M:%S'))
-                ->setScheduledAt(strftime('%Y-%m-%d %H:%M:%S'))
+                ->setCreatedAt(date('Y-m-d H:i:s'))
+                ->setScheduledAt(date('Y-m-d H:i:s'))
                 ->save();
         }
 
