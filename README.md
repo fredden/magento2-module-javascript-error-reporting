@@ -60,3 +60,13 @@ Community contributions are welcome.
 Please open a pull request on GitHub if you have a code suggestion,
 or an issue on GitHub if you are encountering a problem with this module.
 Please note that issues relating to the problems that this module highlights in others' code are out of scope for support here.
+
+## Future development ideas
+
+- filter grid by date **and time** range
+- details of "errors like this" (same hash) on details page.
+  - perhaps links for: first, last, next, previous
+  - maybe a chart of this error over time
+    - show same charts as statistics page, but specifically for this error
+- statistics page, link for details should go to latest not first instance of error
+- charts on statistics page, click node to go to details pane with this time filter applied
