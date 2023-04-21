@@ -41,6 +41,13 @@ class EventDataProvider extends AbstractDataProvider
                             ENT_QUOTES | ENT_HTML5
                         )
                     );
+
+                    // Split/wrap hashes in URLs, eg /admin/dashboard/index/key/{hash}/
+                    $item[$key] = preg_replace(
+                        '_&sol;<wbr>([a-f0-9]{16})([a-f0-9]{16})([a-f0-9]{16})([a-f0-9]{16})&sol;<wbr>_',
+                        '/<wbr>\1<wbr>\2<wbr>\3<wbr>\4/<wbr>',
+                        $item[$key]
+                    );
                 }
             }
 
