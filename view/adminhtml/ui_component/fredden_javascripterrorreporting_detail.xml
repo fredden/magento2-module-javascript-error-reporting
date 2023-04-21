@@ -127,7 +127,7 @@
 
         <field name="referrer" formElement="input">
             <settings>
-                <elementTmpl>ui/form/element/text</elementTmpl>
+                <elementTmpl>ui/form/element/html</elementTmpl>
                 <label translate="true">Referrer</label>
                 <imports>
                     <link name="value">${ $.provider }:data.general.referrer</link>

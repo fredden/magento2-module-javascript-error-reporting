@@ -32,7 +32,7 @@ class EventDataProvider extends AbstractDataProvider
 
         if (!empty($data['items'])) {
             foreach ($data['items'] as &$item) {
-                foreach (['error_file', 'url'] as $key) {
+                foreach (['error_file', 'referrer', 'url'] as $key) {
                     $item[$key] = str_replace(
                         ';',
                         ';<wbr>',
