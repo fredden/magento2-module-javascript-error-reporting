@@ -1,4 +1,5 @@
 <?php
+/** @var \Magento\Framework\Escaper $escaper */
 /** @var \Magento\Cms\Api\Data\BlockInterface $block */
 /** @var \Fredden\JavaScriptErrorReporting\Scope\Config $config */
 $config = $block->getConfig();
@@ -21,19 +22,19 @@ $charts = $block->getCharts();
 {
     "#chart_hourly": {
         "Fredden_JavaScriptErrorReporting/chart": {
-            "title": "<?= $block->escapeHtml(__('Error rate - last %1 hours', $config->getChartDisplayHowManyHours())); ?>",
+            "title": "<?= $escaper->escapeHtml(__('Error rate - last %1 hours', $config->getChartDisplayHowManyHours())); ?>",
             "data": <?= /* @noEscape */ $charts->getHourlyData(); ?>
         }
     },
     "#chart_daily": {
         "Fredden_JavaScriptErrorReporting/chart": {
-            "title": "<?= $block->escapeHtml(__('Error rate - last %1 days', $config->getChartDisplayHowManyDays())); ?>",
+            "title": "<?= $escaper->escapeHtml(__('Error rate - last %1 days', $config->getChartDisplayHowManyDays())); ?>",
             "data": <?= /* @noEscape */ $charts->getDailyData(); ?>
         }
     },
     "#chart_weekly": {
         "Fredden_JavaScriptErrorReporting/chart": {
-            "title": "<?= $block->escapeHtml(__('Error rate - last %1 weeks', $config->getChartDisplayHowManyWeeks())); ?>",
+            "title": "<?= $escaper->escapeHtml(__('Error rate - last %1 weeks', $config->getChartDisplayHowManyWeeks())); ?>",
             "data": <?= /* @noEscape */ $charts->getWeeklyData(); ?>
         }
     }
