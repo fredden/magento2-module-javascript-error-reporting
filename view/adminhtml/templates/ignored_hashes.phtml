@@ -1,16 +1,17 @@
 <?php
+/** @var \Magento\Framework\Escaper $escaper */
 $count = count($block->getConfig()->getIgnoredHashes());
 
 if ($count): ?>
     <p>
-        <?= $block->escapeHtml(__('The above list has been filtered to ignore %1 errors.', $count)) ?>
+        <?= $escaper->escapeHtml(__('The above list has been filtered to ignore %1 errors.', $count)) ?>
     </p>
 
-    <form method="post" action="<?= $block->escapeUrl($block->getUrl('*/*/resetIgnore')); ?>">
+    <form method="post" action="<?= $escaper->escapeUrl($block->getUrl('*/*/resetIgnore')); ?>">
         <input type="hidden" name="form_key" value="<?= $block->getFormKey() ?>" />
 
         <button type="submit">
-            <?= $block->escapeHtml(__('Reset ignore list to show all errors')) ?>
+            <?= $escaper->escapeHtml(__('Reset ignore list to show all errors')) ?>
         </button>
     </form>
 <?php endif;

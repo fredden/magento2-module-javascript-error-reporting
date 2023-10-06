@@ -1,4 +1,5 @@
+<?php /** @var \Magento\Framework\Escaper $escaper */ ?>
 <?php $assetUrl = $block->getViewFileUrl('Fredden_JavaScriptErrorReporting::error-handler.js'); ?>
 <?php $apiUrl = preg_replace('_/rest/[^/]+/V1/_', '/rest/V1/', $block->getApiUrl()); ?>
-<script async src="<?= $block->escapeUrl($assetUrl) ?>"
-  data-report-url="<?= $block->escapeUrl($apiUrl) ?>"></script>
+<script async src="<?= $escaper->escapeUrl($assetUrl) ?>"
+  data-report-url="<?= $escaper->escapeUrl($apiUrl) ?>"></script>
