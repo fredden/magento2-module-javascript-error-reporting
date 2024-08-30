@@ -11,7 +11,7 @@
     ],
     "homepage": "https://github.com/fredden/magento2-module-javascript-error-reporting",
     "require": {
-        "php": "~8.1.0 || ~8.2.0",
+        "php": "~8.1.0 || ~8.2.0 || ~8.3.0",
         "ext-pcre": "*",
         "magento/framework": "^103.0.4",
         "magento/module-backend": "^102.0.4",
