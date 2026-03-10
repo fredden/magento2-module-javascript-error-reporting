@@ -26,6 +26,43 @@
         sendTimer = window.setTimeout(sendError, sendDelay);
     };
 
+
+    
+    // Override console.error method so these errors are also logged
+
+    var originalConsole = {
+        error: console.error
+    };
+
+
+    function logToQueue(type, args) {
+        if (sendQueue.length > 100) {
+            // That's a lot of errors! Let's not overwhelm the server with more.
+            return;
+        }
+        if (!sendQueue.length) {
+            sendTimer = window.setTimeout(sendError, sendDelay);
+        }
+        sendQueue.push({
+            browser: {
+                height: window.innerHeight,
+                url: window.location.href,
+                width: window.innerWidth,
+            },
+            event: {
+                type: type,
+                message: Array.from(args).join(' '),
+                timer: (performance.now() / 1000).toFixed(2),
+            },
+        });
+    }
+
+    console.error = function() {
+        logToQueue('error', arguments);
+        originalConsole.error.apply(console, arguments);
+    };
+
+    
     window.addEventListener('error', function (event) {
         if (!event) {
             return;
